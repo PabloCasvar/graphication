@@ -48,7 +48,43 @@ describe("Evaluates matrix operations", function() {
   it("should return same matrix", function(){
     expect(matrixMult(I,I)).toEqual(I);
   });
+
+  it("should return same matrix A", function(){
+    expect(matrixMult(E,I)).toEqual(E);
+  });
   
+  it("should return Identity 1X1", function(){
+    expect(createIdentity(1)).toEqual([[1]]);
+  });
+
+  it("should return Identity 2X2", function(){
+    expect(createIdentity(2)).toEqual([[1,0],[0,1]]);
+  });  
+  it("should return Identity 3X3", function(){
+    expect(createIdentity(3)).toEqual(I);
+  });
+
+  it("should return 3X3 translation matrix", function(){
+    expect( translationMatrix(2,-1)).toEqual(
+      [
+        [1, 0, 2],
+        [0, 1, -1],
+        [0, 0, 1]
+      ]
+    );
+  });
+
+  it("should return 4X4 translation matrix", function(){
+    expect( translationMatrix(2,-1, 5)).toEqual(
+      [
+        [1, 0, 0, 2],
+        [0, 1, 0,-1],
+        [0, 0, 1, 5],
+        [0, 0, 0, 1]
+      ]
+    );
+  });
+ 
 });
 
 describe("Evaluates vector/array transformations", function() {
