@@ -1,0 +1,29 @@
+{
+  "name": "graphication",
+  "version": "1.0.0",
+  "description": "Library for graps",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PabloCasvar/graphication.git"
+  },
+  "author": "Pablo Tovar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PabloCasvar/graphication/issues"
+  },
+  "homepage": "https://github.com/PabloCasvar/graphication#readme",
+  "devDependencies": {
+    "jasmine": "^2.6.0",
+    "jasmine-core": "^2.6.4",
+    "karma": "^1.7.0",
+    "karma-requirejs": "^1.1.0",
+    "requirejs": "^2.3.3"
+  }
+}

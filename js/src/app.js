@@ -1,22 +1,8 @@
 function init(){
-    a=  [[1, 2],[3,4]];
-    console.log(getLengths(a));
-    b=  [[1, 2, 3], [4, 5, 6]];
-    console.log(getLengths(b));
-    c=  [[1,1],[2],[3]];
-    console.log(getLengths(c));
-    d=  [[1,1],[2,2],[3,2]];
-    console.log(getLengths(d));
-    e =  [[1,1,1],[2,2,2],[3,3,3]];
-    console.log(getLengths(e));
-
-    console.log(matrixMult(a, b));
-    console.log(matrixMult(b,c));
-    console.log(matrixMult(c,d));
-    console.log(matrixMult(e,e));
 };
 
-var getLengths = function(A){
+//todo: implement this function for arbitrary multiple dimension matrix
+getLengths = function(A){
     //get lengths of 2X2 matrix; returns false if its not a 2X2 matrix
     var rows = A.length;
     if(Array.isArray(A) && rows>0){
@@ -40,7 +26,7 @@ var getLengths = function(A){
     return {"rows": rows, "cols":cols, "0": rows, "1": cols};
 }
 
-var matrixMult = function(A,B){
+matrixMult = function(A,B){
     //multiply two matrix; returns false if matrix are not well defined
     if(getLengths(A) && getLengths(B) && getLengths(A).cols===getLengths(B).rows){
         var acum = 0;
@@ -64,4 +50,32 @@ var matrixMult = function(A,B){
     }else{
         return false;
     }
+};
+
+arrayToVerticalMatrix = function(array){
+    if(!Array.isArray(array)) return false;
+    var vector = [];
+    for(var i=0 ; i<array.length; i++){
+        vector.push([array[i]]);
+    }
+    return vector;
+}
+
+arrayToHorizontalMatrix = function(array){
+    if(!Array.isArray(array)) return false;
+    return [array];
+}
+
+matrixVerticalToArray = function(matrix){
+    if(getLengths(matrix).cols != 1) return false;
+    array = [];
+    for(var i=0; i<matrix.length; i++){
+        array.push(matrix[i][0]);
+    }
+    return array;
+}
+
+matrixHorizontalToArray = function(matrix){
+    if(getLengths(matrix).rows != 1) return false;
+    return matrix[0];
 }
